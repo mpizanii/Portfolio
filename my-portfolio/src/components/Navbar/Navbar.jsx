@@ -1,12 +1,13 @@
 import { styled, AppBar, MenuItem, Toolbar, IconButton } from "@mui/material"
 import Brasil from "../../assets/images/Brasil.png"
-import { useState } from "react";
 import ThemeMode from "./ThemeMode";
 
 function Navbar( {theme, setTheme} ) {
-    const StyledToolbar = styled(Toolbar)(() => ({
+    const StyledToolbar = styled(Toolbar)(({theme}) => ({
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        backgroundColor: theme.palette.background.default,
+        color: theme.palette.textNavbar.main
       }))
 
     const StyledImg = styled("img")(() => ({

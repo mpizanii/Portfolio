@@ -5,17 +5,23 @@ export let lightTheme = createTheme({
     background: {
       default: '#e5e4e4', //cinza claro (cor de fundo)
     },
-    primary: {
-      main: '#bab7b7', //cinza (cor da navbar e de fundo para a aba sobre)
+    secondBackground: {
+      main: '#bab7b7', //cinza (cor de fundo aba sobre)
     },
-    secondary: {
-      main: '#0a192f', //azul escuro (cor das letras e botões)
+    text: {
+      main: '#0a192f', //azul escuro (cor do texto no fundo claro)
+    },
+    textBackgroundContrast:{
+      main: '#fff', //branco (cor do texto no fundo escuro)
+    },
+    textNavbar:{
+      main: '#000' //preto (cor do texto da navbar)
     },
     border:{
       main: '#313131' //cinza escuro (cor da borda)
     },
-    text:{
-      main: '#fff' //branco (cor de letras para parte escura)
+    button:{
+      main: '#0a192f' //azul escuro (cor dos botões)
     }
   },
   typography: {
@@ -28,17 +34,23 @@ export let darkTheme = createTheme({
     background: {
       default: '#313131', //cinza escuro (cor de fundo)
     },
-    primary: {
-      main: '#e5e4e4', //cinza claro (cor da navbar e de fundo para a aba sobre)
+    secondBackground: {
+      main: '#e5e4e4', //cinza (cor de fundo aba sobre)
     },
-    secondary: {
-      main: '#ebebeb', 
+    text: {
+      main: '#000', //preto (cor do texto no fundo escuro)
+    },
+    textBackgroundContrast:{
+      main: '#fff', //branco (cor do texto no fundo claro)
+    },
+    textNavbar:{
+      main: '#fff' //branco (cor do texto da navbar)
     },
     border:{
-      main: '#ebebeb'
+      main: '#ebebeb' //cinza claro (cor da borda)
     },
-    text:{
-      main: '#313131'
+    button:{
+      main: '#000' //bege (cor dos botões)
     }
   },
   typography: {

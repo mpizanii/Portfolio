@@ -1,9 +1,9 @@
 import { styled } from "@mui/material"
 
-function About(){
-  const StyledAbout = styled("div")(({theme}) => ({
+function Footer(){
+  const StyledFooter = styled("div")(({theme}) => ({
     backgroundColor: theme.palette.secondBackground.main, 
-    height: "75vh",
+    height: "20vh",
     display: "flex",
     alignItems: "center",
     [theme.breakpoints.up('xs')]: {
@@ -15,9 +15,9 @@ function About(){
   }))
     return (
         <>
-          <StyledAbout>About</StyledAbout>
+          <StyledFooter>Footer</StyledFooter>
         </>
       )
 }
 
-export default About
+export default Footer
