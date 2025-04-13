@@ -2,7 +2,7 @@ import {styled, Grid, Typography, Container, backdropClasses} from "@mui/materia
 import Me from "../../assets/images/Me.jpg";
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
-
+import { Typewriter } from '../../components/TypewriterEffect/TypewriterEffect'
 
 function Hero() {
   const StyledHero = styled("div")(({theme}) => ({
@@ -20,7 +20,7 @@ function Hero() {
   const StyledImg = styled("img")(({theme}) => ({
     width: "100%",
     borderRadius:"50%",
-    border: `2px solid ${theme.palette.text.main}`
+    border: `2px solid ${theme.palette.border.main}`
   }))
   const StyledButton = styled("button")(({theme}) => ({
     display: "flex",
@@ -32,7 +32,7 @@ function Hero() {
     marginTop: "15px",
     borderRadius: "10px",
     backgroundColor:  theme.palette.secondary.main,
-    color: "white",
+    color: theme.palette.text.main,
     cursor: "pointer",
     border: "none",
 
@@ -50,7 +50,7 @@ function Hero() {
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h1" color="secondary" textAlign={"center"}>Matheus Pizani</Typography>
-              <Typography variant="h4" color="secondary" textAlign={"center"}>Desenvolvedor Full-Stack</Typography>
+              <Typography variant="h4" color="secondary" textAlign={"center"}><Typewriter text="Desenvolvedor Full-stack"/></Typography>
               <Grid container display="flex" justifyContent="center" gap="10px">
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
                   <StyledButton onClick={() => console.log("download")}>
