@@ -7,14 +7,14 @@ import { Typewriter } from '../../components/TypewriterEffect/TypewriterEffect'
 function Hero() {
   const StyledHero = styled("div")(({theme}) => ({
     backgroundColor: theme.palette.background.default, 
-    height: "100vh",
     display: "flex",
+    height: "100vh",
     alignItems: "center",
     [theme.breakpoints.up('xs')]: {
-      paddingTop: "100px"
+      paddingTop: "50px",
     },
     [theme.breakpoints.up('md')]: {
-      paddingTop: "0px"
+      paddingTop: "0px",
     }
   }))
   
