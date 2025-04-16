@@ -11,11 +11,10 @@ const StyledHandleMenu = styled(Box)(({ theme }) => ({
   height: "100%",
 }));
 
-
-export function MenuLateral({ menuAberto, setMenuAberto, StyledImg}) {
+export function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg}) {
   return (
     <>
-      <Drawer anchor="left" open={menuAberto} onClose={() => setMenuAberto(false)}>
+      <Drawer anchor="left" open={menuLateralAberto} onClose={() => setMenuLateralAberto(false)}>
         <StyledHandleMenu>
         <Typography variant= "h6" borderBottom="2px solid black" textAlign="center" width="100%">Matheus Pizani</Typography>
             <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" marginTop="5px">

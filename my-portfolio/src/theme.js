@@ -21,7 +21,7 @@ export let darkTheme = createTheme({
       main: '#ebebeb' //cinza claro (cor da borda)
     },
     button:{
-      main: '#000' //bege (cor dos botões)
+      main: '#000' //preto (cor dos botões)
     }
   },
   typography: {

@@ -1,7 +1,6 @@
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { IconButton, Box } from '@mui/material';
-import { styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 export const StyledBox = styled(Box)(( { theme } ) => ({
     [theme.breakpoints.up("xs")]: {
@@ -39,7 +38,6 @@ export const StyledBox = styled(Box)(( { theme } ) => ({
   }));
 
 function ThemeMode({ theme, setTheme }) {
-
   const themeToggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
