@@ -3,8 +3,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { IconButton, Box } from '@mui/material';
 import { styled } from '@mui/material';
 
-function ThemeMode({ theme, setTheme }) {
-  const StyledBox = styled(Box)(( { theme } ) => ({
+export const StyledBox = styled(Box)(( { theme } ) => ({
     [theme.breakpoints.up("xs")]: {
       display: "flex",
       backgroundColor: "#bab7b7",
@@ -14,24 +13,12 @@ function ThemeMode({ theme, setTheme }) {
       padding: "2.5px", 
     },
     [theme.breakpoints.up("md")]: {
-      display: "flex",
-      backgroundColor: "#bab7b7",
-      borderRadius: "90px",
       width: "80px",
       height: "40px",
-      padding: "2.5px", 
     },
   }));
 
-  const StyledIconButton = styled(IconButton)(( { theme } ) => ({
-    width: '100%',
-    display: "flex",
-    justifyContent: "flex-start",
-    padding: 0, 
-    cursor: "auto"
-  }));
-
-  const StyledButtonBall = styled(Box)(({ mode, theme }) => ({
+ export const StyledButtonBall = styled(Box)(({ mode, theme }) => ({
     [theme.breakpoints.up("xs")]: {
       width: "30px",
       height: "30px",
@@ -43,34 +30,25 @@ function ThemeMode({ theme, setTheme }) {
       justifyContent: "center",
       position: "relative",
       left: mode === "dark" ? "0" : "40px",
-      transition: "left 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out"
+      transition: "left 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out"
     },
     [theme.breakpoints.up("md")]: {
       width: "35px",
       height: "35px",
-      borderRadius: "50%",
-      backgroundColor: mode === "dark" ? "#313131" : "#e5e4e4",
-      color: mode === "dark" ? "#ffff00" : "#ffa500",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      position: "relative",
-      left: mode === "dark" ? "0" : "40px",
-      transition: "left 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out"
     },
   }));
+
+function ThemeMode({ theme, setTheme }) {
 
   const themeToggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <StyledBox>
-      <StyledIconButton onClick={themeToggle} mode={theme}>
+    <StyledBox onClick={themeToggle}>
         <StyledButtonBall mode={theme}>
           {theme === "light" ? <LightModeIcon /> : <DarkModeIcon />}
         </StyledButtonBall>
-      </StyledIconButton>
     </StyledBox>
   );
 }
