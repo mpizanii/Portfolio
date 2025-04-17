@@ -1,12 +1,13 @@
 import { styled, AppBar, MenuItem, Toolbar, IconButton, Box } from "@mui/material"
 import Brasil from "../../assets/images/Brasil.png"
-import Usa from "../../assets/images/Usa.png";
 import ThemeMode from "./ThemeMode";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { MenuLateral } from "./MenuLateralMobile";
 import { MenuIdioma } from "./MenuIdioma";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 export const StyledDesktopToolbar = styled(Toolbar)(( { theme } ) => ({
   [theme.breakpoints.up('xs')]: {
@@ -33,7 +34,7 @@ export const StyledMobileToolbar = styled(Toolbar)(( { theme } ) => ({
   },
 }))
 
-export const StyledImg = styled("img")(( { theme } ) => ({
+const StyledImg = styled("img")(( { theme } ) => ({
   [theme.breakpoints.up("xs")]: {
     width: "30px",
   },
@@ -49,7 +50,7 @@ const RotatingIcon = styled(KeyboardArrowUpIcon, {
   transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
 }));
 
-function Navbar( {theme, setTheme} ) {
+function Navbar( {theme, setTheme, changeLanguage, t} ) {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
   const [menuIdiomaAberto, setMenuIdiomaAberto] = useState(false);
 
@@ -59,7 +60,7 @@ function Navbar( {theme, setTheme} ) {
 
   const handleMenuIdiomaClick = () => {
     setMenuIdiomaAberto(prev => !prev);
-  }
+  };
 
   return (
     <>
@@ -69,7 +70,7 @@ function Navbar( {theme, setTheme} ) {
             <MenuIcon/>
           </IconButton>
             <ThemeMode theme={theme} setTheme={setTheme}/>
-          <MenuLateral menuLateralAberto = {menuLateralAberto} setMenuLateralAberto = {setMenuLateralAberto} StyledImg = {StyledImg}/>
+          <MenuLateral menuLateralAberto = {menuLateralAberto} setMenuLateralAberto = {setMenuLateralAberto} StyledImg = {StyledImg} changeLanguage={changeLanguage} t={t}/>
         </StyledMobileToolbar>
         <StyledDesktopToolbar>
           <Box display= "flex" alignItems="center">
@@ -77,11 +78,11 @@ function Navbar( {theme, setTheme} ) {
             <IconButton onClick={handleMenuIdiomaClick}>
               <RotatingIcon open={menuIdiomaAberto} />
             </IconButton>
-            <MenuIdioma menuIdiomaAberto={menuIdiomaAberto} setMenuIdiomaAberto={setMenuIdiomaAberto} StyledImg={StyledImg}/>
+            <MenuIdioma menuIdiomaAberto={menuIdiomaAberto} setMenuIdiomaAberto={setMenuIdiomaAberto} StyledImg={StyledImg} changeLanguage={changeLanguage} t={t}/>
           </Box>
-            <MenuItem onClick={() => (console.log("sobre"))}>Sobre</MenuItem>
-            <MenuItem onClick={() => (console.log("habilidades"))}>Habilidades</MenuItem>
-            <MenuItem onClick={() => (console.log("projetos"))}>Projetos</MenuItem>
+            <MenuItem onClick={() => (console.log("sobre"))}>{t("information.about")}</MenuItem>
+            <MenuItem onClick={() => (console.log("habilidades"))}>{t("information.skills")}</MenuItem>
+            <MenuItem onClick={() => (console.log("projetos"))}>{t("information.projects")}</MenuItem>
             <ThemeMode theme={theme} setTheme={setTheme}/>
         </StyledDesktopToolbar>
       </AppBar>

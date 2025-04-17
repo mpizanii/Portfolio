@@ -11,24 +11,24 @@ const StyledHandleMenu = styled(Box)(({ theme }) => ({
   height: "100%",
 }));
 
-export function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg}) {
+export function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg, changeLanguage, t}) {
   return (
     <>
       <Drawer anchor="left" open={menuLateralAberto} onClose={() => setMenuLateralAberto(false)}>
         <StyledHandleMenu>
         <Typography variant= "h6" borderBottom="2px solid black" textAlign="center" width="100%">Matheus Pizani</Typography>
             <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" marginTop="5px">
-                <MenuItem onClick={() => console.log("sobre")}>Sobre</MenuItem>
-                <MenuItem onClick={() => console.log("habilidades")}>Habilidades</MenuItem>
-                <MenuItem onClick={() => console.log("projetos")}>Projetos</MenuItem>
+                <MenuItem onClick={() => console.log("sobre")}>{t("information.about")}</MenuItem>
+                <MenuItem onClick={() => console.log("habilidades")}>{t("information.skills")}</MenuItem>
+                <MenuItem onClick={() => console.log("projetos")}>{t("information.projects")}</MenuItem>
             </Box>       
         <Box display="flex" justifyContent="flex-start" flexDirection="column" height="100%" marginTop="10px" alignItems="center">
-            <Typography variant= "h6" borderBottom="2px solid black" textAlign="center" width="100%">Idioma</Typography>
+            <Typography variant= "h6" borderBottom="2px solid black" textAlign="center" width="100%">{t("language")}</Typography>
                 <Box display="flex" justifyContent="space-evenly" marginTop="5px">
-                <IconButton onClick={() => console.log("brasil")}>
+                <IconButton onClick={() => changeLanguage('pt')}>
                     <StyledImg src={Brasil} alt="Brasil" />
                 </IconButton>
-                <IconButton onClick={() => console.log("usa")}>
+                <IconButton onClick={() => changeLanguage('en')}>
                     <StyledImg src={Usa} alt="Usa" />
                 </IconButton>
         </Box>    

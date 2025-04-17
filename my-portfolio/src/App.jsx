@@ -7,16 +7,23 @@ import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material'
 import { lightTheme, darkTheme } from "./theme.js";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import "./i18n.js";
 
 function App() {
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState("dark");
+  const {t, i18n} = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
     return (
       <>
       <ThemeProvider theme= {theme === "light" ? lightTheme : darkTheme}>
         <CssBaseline/>
-          <Navbar theme={theme} setTheme={setTheme}/>
-          <Hero/>
+          <Navbar theme={theme} setTheme={setTheme} changeLanguage={changeLanguage} t={t}/>
+          <Hero t={t}/>
           <About/>
           <Projects/>
           <Footer/>

@@ -10,7 +10,7 @@ export const StyledHandleMenu = styled(Box)(({ theme }) => ({
     padding: "10px",
     borderRadius: "20px",
     backgroundColor: theme.palette.secondBackground.main,
-    width: "100px",
+    width: "120px",
     marginTop: "190px",
     left: "10px",
     transition: "all 0.3s ease-in-out",
@@ -28,27 +28,27 @@ export const StyledBox = styled(Box)(() => {
     alignItems:"center"
 })
 
-export function MenuIdioma({ menuIdiomaAberto, StyledImg }) {
-    return (
-      <StyledHandleMenu
-        sx={{
-          opacity: menuIdiomaAberto ? 1 : 0,
-          transform: menuIdiomaAberto ? 'translateY(0)' : 'translateY(-10px)',
-          pointerEvents: menuIdiomaAberto ? 'auto' : 'none',
-        }}
-      >
-        <StyledBox>
-          <Typography variant="h6" borderBottom="2px solid black" textAlign="center" width="100%">Idioma</Typography>
-          <Box display="flex" justifyContent="center" marginTop="5px">
-            <IconButton onClick={() => console.log("brasil")}>
-              <StyledImg src={Brasil} alt="Brasil" />
-            </IconButton>
-            <IconButton onClick={() => console.log("usa")}>
-              <StyledImg src={Usa} alt="Usa" />
-            </IconButton>
-          </Box>
-        </StyledBox>
-      </StyledHandleMenu>
-    );
-  }
+export function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage, t }) {
+  return (
+    <StyledHandleMenu
+      sx={{
+        opacity: menuIdiomaAberto ? 1 : 0,
+        transform: menuIdiomaAberto ? 'translateY(0)' : 'translateY(-10px)',
+        pointerEvents: menuIdiomaAberto ? 'auto' : 'none',
+      }}
+    >
+      <StyledBox>
+        <Typography variant="h6" borderBottom="2px solid black" textAlign="center" width="100%">{t("language")}</Typography>
+        <Box display="flex" justifyContent="center" marginTop="5px">
+          <IconButton onClick={() => changeLanguage('pt')}>
+            <StyledImg src={Brasil} alt="Brasil" />
+          </IconButton>
+          <IconButton onClick={() => changeLanguage('en')}>
+            <StyledImg src={Usa} alt="Usa" />
+          </IconButton>
+        </Box>
+      </StyledBox>
+    </StyledHandleMenu>
+  );
+}
 
