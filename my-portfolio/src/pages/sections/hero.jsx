@@ -4,6 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import { Typewriter } from '../../components/TypewriterEffect/TypewriterEffect';
 import "../../i18n";
+import { useTranslation } from "react-i18next";
 
 const StyledHero = styled("div")(({theme}) => ({
   backgroundColor: theme.palette.background.default, 
@@ -24,7 +25,7 @@ const StyledImg = styled("img")(({theme}) => ({
   border: `2px solid ${theme.palette.border.main}`
 }))
 
-const StyledButton = styled("button")(({theme}) => ({
+const StyledButton = styled("a")(({theme}) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -37,12 +38,17 @@ const StyledButton = styled("button")(({theme}) => ({
   color: theme.palette.textBackgroundContrast.main,
   cursor: "pointer",
   border: "none",
+  textDecoration: "none",
 
   transition: "background-color 0.3s ease",
   "&:hover": {
   backgroundColor: "#0410ad",}
 }))
 function Hero( { t } ) {
+  const { i18n } = useTranslation();
+
+  const lang = i18n.language;
+  const pdfPath = lang === 'en' ? "pdf/CV - en.pdf" : "pdf/CV - pt.pdf"
 
   return (
     <>
@@ -58,10 +64,10 @@ function Hero( { t } ) {
               <Typography variant="h4" color="text.main" textAlign={"center"}><Typewriter text={t('career')}/></Typography>
               <Grid container display="flex" justifyContent="center" gap="10px">
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
-                  <StyledButton onClick={() => console.log("download")}>
-                    <DownloadIcon/>
-                    {t('download')}
-                  </StyledButton>
+                <StyledButton component="a" href={pdfPath} download>
+                  <DownloadIcon />
+                  {t('download')}
+                </StyledButton>
                 </Grid>
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
                   <StyledButton onClick={() => console.log("contato")}>

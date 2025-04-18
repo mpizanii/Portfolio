@@ -6,8 +6,6 @@ import { useState } from "react";
 import { MenuLateral } from "./MenuLateralMobile";
 import { MenuIdioma } from "./MenuIdioma";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { useTranslation } from "react-i18next";
-import "../../i18n";
 
 export const StyledDesktopToolbar = styled(Toolbar)(( { theme } ) => ({
   [theme.breakpoints.up('xs')]: {
@@ -53,7 +51,6 @@ const RotatingIcon = styled(KeyboardArrowUpIcon, {
 function Navbar( {theme, setTheme, changeLanguage, t} ) {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
   const [menuIdiomaAberto, setMenuIdiomaAberto] = useState(false);
-
   const handleMenuClick = () => {
     setMenuLateralAberto(true);
   };
