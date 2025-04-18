@@ -51,6 +51,7 @@ const RotatingIcon = styled(KeyboardArrowUpIcon, {
 function Navbar( {theme, setTheme, changeLanguage, t} ) {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
   const [menuIdiomaAberto, setMenuIdiomaAberto] = useState(false);
+  
   const handleMenuClick = () => {
     setMenuLateralAberto(true);
   };

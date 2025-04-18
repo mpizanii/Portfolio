@@ -42,7 +42,7 @@ const StyledButton = styled("a")(({theme}) => ({
 
   transition: "background-color 0.3s ease",
   "&:hover": {
-  backgroundColor: "#0410ad",}
+  backgroundColor: theme.palette.buttonHover.main,}
 }))
 function Hero( { t } ) {
   const { i18n } = useTranslation();
@@ -54,14 +54,13 @@ function Hero( { t } ) {
     <>
       <StyledHero>
         <Container>
-
           <Grid container spacing={2}>
             <Grid size={{ xs: 12, md: 4 }}>
                 <StyledImg src={Me}/>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
-              <Typography variant="h1" color="text.main" textAlign={"center"}>Matheus Pizani</Typography>
-              <Typography variant="h4" color="text.main" textAlign={"center"}><Typewriter text={t('career')}/></Typography>
+              <Typography variant="h1" color="text.main" textAlign="center">Matheus Pizani</Typography>
+              <Typography variant="h4" color="text.main" textAlign="center"><Typewriter text={t('career')}/></Typography>
               <Grid container display="flex" justifyContent="center" gap="10px">
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
                 <StyledButton component="a" href={pdfPath} download>
@@ -78,7 +77,6 @@ function Hero( { t } ) {
               </Grid>
             </Grid>
           </Grid>
-
         </Container>
       </StyledHero>
     </>

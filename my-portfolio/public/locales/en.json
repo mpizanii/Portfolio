@@ -5,5 +5,8 @@
     "language": "Language",
     "career": "Full-Stack Developer",
     "download": "Download CV",
-    "contact": "Contact me"
+    "contact": "Contact me",
+    "school": "School",
+    "bachelor": "Bachelor's Degree",
+    "computerScience": "Computer Science"
 }

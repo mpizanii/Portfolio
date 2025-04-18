@@ -24,7 +24,7 @@ function App() {
         <CssBaseline/>
           <Navbar theme={theme} setTheme={setTheme} changeLanguage={changeLanguage} t={t}/>
           <Hero t={t}/>
-          <About/>
+          <About t={t}/>
           <Projects/>
           <Footer/>
       </ThemeProvider>

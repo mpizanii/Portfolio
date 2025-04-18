@@ -12,7 +12,7 @@ export let darkTheme = createTheme({
       main: '#000', //preto (cor do texto no fundo escuro)
     },
     textBackgroundContrast:{
-      main: '#fff', //branco (cor do texto no fundo claro)
+      main: '#000', //branco (cor do texto no fundo claro)
     },
     textNavbar:{
       main: '#fff' //branco (cor do texto da navbar)
@@ -21,7 +21,10 @@ export let darkTheme = createTheme({
       main: '#ebebeb' //cinza claro (cor da borda)
     },
     button:{
-      main: '#000' //preto (cor dos botões)
+      main: '#8f8f8f' //preto (cor dos botões)
+    },
+    buttonHover:{
+      main: '#ebebeb'
     }
   },
   typography: {
@@ -51,6 +54,9 @@ export let lightTheme = createTheme({
     },
     button:{
       main: '#0a192f' //azul escuro (cor dos botões)
+    },
+    buttonHover:{
+      main: '#0410ad' //azul claro (cor do botão quando o mouse passa em cima)
     }
   },
   typography: {
