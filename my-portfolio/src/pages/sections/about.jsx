@@ -15,7 +15,7 @@ function About(){
   }))
     return (
         <>
-          <StyledAbout>About</StyledAbout>
+          <StyledAbout id="about">About</StyledAbout>
         </>
       )
 }

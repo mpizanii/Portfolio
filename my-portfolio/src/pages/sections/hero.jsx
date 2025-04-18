@@ -70,7 +70,7 @@ function Hero( { t } ) {
                 </StyledButton>
                 </Grid>
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
-                  <StyledButton onClick={() => console.log("contato")}>
+                  <StyledButton component="a" href="mailto:mpizani28@gmail.com?">
                     <EmailIcon/>
                     {t('contact')}
                   </StyledButton>

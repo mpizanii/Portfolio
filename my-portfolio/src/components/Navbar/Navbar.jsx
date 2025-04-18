@@ -59,6 +59,13 @@ function Navbar( {theme, setTheme, changeLanguage, t} ) {
     setMenuIdiomaAberto(prev => !prev);
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <AppBar position="absolute">
@@ -77,9 +84,9 @@ function Navbar( {theme, setTheme, changeLanguage, t} ) {
             </IconButton>
             <MenuIdioma menuIdiomaAberto={menuIdiomaAberto} setMenuIdiomaAberto={setMenuIdiomaAberto} StyledImg={StyledImg} changeLanguage={changeLanguage} t={t}/>
           </Box>
-            <MenuItem onClick={() => (console.log("sobre"))}>{t("information.about")}</MenuItem>
-            <MenuItem onClick={() => (console.log("habilidades"))}>{t("information.skills")}</MenuItem>
-            <MenuItem onClick={() => (console.log("projetos"))}>{t("information.projects")}</MenuItem>
+            <MenuItem onClick={() => scrollToSection("about")}>{t("information.about")}</MenuItem>
+            <MenuItem onClick={() => scrollToSection("about")}>{t("information.skills")}</MenuItem>
+            <MenuItem onClick={() => scrollToSection("projects")}>{t("information.projects")}</MenuItem>
             <ThemeMode theme={theme} setTheme={setTheme}/>
         </StyledDesktopToolbar>
       </AppBar>

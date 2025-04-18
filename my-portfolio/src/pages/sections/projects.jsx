@@ -15,7 +15,7 @@ function Projects(){
   }))
     return (
         <>
-          <StyledProjects>Projects</StyledProjects>
+          <StyledProjects id="projects">Projects</StyledProjects>
         </>
       )
 }
