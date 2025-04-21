@@ -3,11 +3,11 @@ import Brasil from "../../assets/images/Brasil.png"
 import ThemeMode from "./ThemeMode";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
-import { MenuLateral } from "./MenuLateralMobile";
-import { MenuIdioma } from "./MenuIdioma";
+import MenuLateral from "./MenuLateralMobile";
+import MenuIdioma from "./MenuIdioma";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-export const StyledDesktopToolbar = styled(Toolbar)(( { theme } ) => ({
+const StyledDesktopToolbar = styled(Toolbar)(( { theme } ) => ({
   [theme.breakpoints.up('xs')]: {
     display: "none"
   },
@@ -19,7 +19,7 @@ export const StyledDesktopToolbar = styled(Toolbar)(( { theme } ) => ({
   },
 }))
 
-export const StyledMobileToolbar = styled(Toolbar)(( { theme } ) => ({
+const StyledMobileToolbar = styled(Toolbar)(( { theme } ) => ({
   [theme.breakpoints.up('xs')]: {
     display: "flex",
     justifyContent: "space-between",
@@ -32,7 +32,7 @@ export const StyledMobileToolbar = styled(Toolbar)(( { theme } ) => ({
   },
 }))
 
-const StyledImg = styled("img")(( { theme } ) => ({
+const StyledNavbarIcons = styled("img")(( { theme } ) => ({
   [theme.breakpoints.up("xs")]: {
     width: "30px",
   },
@@ -41,25 +41,25 @@ const StyledImg = styled("img")(( { theme } ) => ({
   }
 }))
 
-const RotatingIcon = styled(KeyboardArrowUpIcon, {
+const StyledRotatingLanguageIcon = styled(KeyboardArrowUpIcon, {
   shouldForwardProp: (prop) => prop !== 'open'
 })(({ open }) => ({
   transition: 'transform 0.4s ease',
   transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
 }));
 
-function Navbar( {theme, setTheme, changeLanguage, t} ) {
+export default function Navbar( {theme, setTheme, changeLanguage, t} ) {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
   const [menuIdiomaAberto, setMenuIdiomaAberto] = useState(false);
   
   const handleMenuClick = () => {
     setMenuLateralAberto(true);
   };
-
+  
   const handleMenuIdiomaClick = () => {
     setMenuIdiomaAberto(prev => !prev);
   };
-
+  
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -75,15 +75,15 @@ function Navbar( {theme, setTheme, changeLanguage, t} ) {
             <MenuIcon/>
           </IconButton>
             <ThemeMode theme={theme} setTheme={setTheme}/>
-          <MenuLateral menuLateralAberto = {menuLateralAberto} setMenuLateralAberto = {setMenuLateralAberto} StyledImg = {StyledImg} changeLanguage={changeLanguage} t={t}/>
+          <MenuLateral menuLateralAberto = {menuLateralAberto} setMenuLateralAberto = {setMenuLateralAberto} StyledImg = {StyledNavbarIcons} changeLanguage={changeLanguage} t={t}/>
         </StyledMobileToolbar>
         <StyledDesktopToolbar>
           <Box display= "flex" alignItems="center">
-            <StyledImg src={Brasil}/>
+            <StyledNavbarIcons src={Brasil}/>
             <IconButton onClick={handleMenuIdiomaClick}>
-              <RotatingIcon open={menuIdiomaAberto} />
+              <StyledRotatingLanguageIcon open={menuIdiomaAberto} />
             </IconButton>
-            <MenuIdioma menuIdiomaAberto={menuIdiomaAberto} setMenuIdiomaAberto={setMenuIdiomaAberto} StyledImg={StyledImg} changeLanguage={changeLanguage} t={t}/>
+            <MenuIdioma menuIdiomaAberto={menuIdiomaAberto} setMenuIdiomaAberto={setMenuIdiomaAberto} StyledImg={StyledNavbarIcons} changeLanguage={changeLanguage} t={t}/>
           </Box>
             <MenuItem onClick={() => scrollToSection("about")}>{t("information.about")}</MenuItem>
             <MenuItem onClick={() => scrollToSection("about")}>{t("information.skills")}</MenuItem>
@@ -94,5 +94,3 @@ function Navbar( {theme, setTheme, changeLanguage, t} ) {
     </>
   )
 }
-  
-export default Navbar

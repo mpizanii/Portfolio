@@ -16,7 +16,7 @@ import { useLayoutEffect  } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const StyledAbout = styled("div")(( { theme } ) => ({
+const StyledBackgroundAbout = styled("div")(( { theme } ) => ({
   [theme.breakpoints.up("xs")]: {
     backgroundColor: theme.palette.secondBackground.main, 
     minHeight: "100dvh",
@@ -29,7 +29,7 @@ const StyledAbout = styled("div")(( { theme } ) => ({
   }
 }))
 
-const StyledEducationButton = styled("a")(({theme}) => ({
+const StyledEducationDiv = styled("a")(({theme}) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -52,7 +52,7 @@ const StyledEducationButton = styled("a")(({theme}) => ({
   opacity: 0
 }))
 
-const StyledIconButton = styled(IconButton)(({theme}) => ({
+const StyledSkillsIcons = styled(IconButton)(({theme}) => ({
   [theme.breakpoints.up("xs")]: {
     display: "flex",
     justifyContent: "center",
@@ -75,16 +75,13 @@ const StyledIconButton = styled(IconButton)(({theme}) => ({
   }
 }))
 
-const StyledBoxTypography = styled(Box)(({theme}) => ({
+const StyledAboutMeBox = styled(Box)(({theme}) => ({
   opacity:"0"
 }))
 
-
-function About( { t  } ){
-
+export default function About( { t  } ){
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     const isMobile = window.innerWidth < 768;
 
     gsap.to(".educationButton", {
@@ -98,7 +95,6 @@ function About( { t  } ){
         scrub: true,
       }
     });
-
     gsap.to(".aboutTypography", {
       opacity: 1,
       rotate: "0deg",
@@ -117,7 +113,7 @@ function About( { t  } ){
 
     return (
         <>
-          <StyledAbout id="about" >
+          <StyledBackgroundAbout id="about" >
               <Container maxWidth="lg">
                 <Box height="20%" width="100%" display="flex" alignItems="center" justifyContent="center">
                   <Typography variant="h3" color="text.main" textAlign="center">{t("information.about")}</Typography>
@@ -126,19 +122,19 @@ function About( { t  } ){
                   <Grid container spacing={2} marginTop="5px" 
                   sx={{borderBottom: theme => `2px solid ${theme.palette.text.main}`}}>
                   <Grid size={{ xs:12, md:9 }}>
-                    <StyledBoxTypography className="aboutTypography">
+                    <StyledAboutMeBox className="aboutTypography">
                       <Typography variant="p">{t("aboutme")}</Typography>
-                    </StyledBoxTypography>
+                    </StyledAboutMeBox>
                   </Grid>
                   <Grid size={{ xs:12, md:3 }} display="flex" justifyContent="center">
-                    <StyledEducationButton className="educationButton">
+                    <StyledEducationDiv className="educationButton">
                     <Box display="flex" justifyContent="center" alignItems="center" gap="8px" 
                     sx={{ borderBottom: theme => `1px solid ${theme.palette.textBackgroundContrast.main}`, }}>
                         <SchoolIcon/>
                         <Typography variant="h6">{t("school")}</Typography>
                     </Box>
                       <Typography variant="p" textAlign="center" marginTop="5px">{t("computerScience")} <br />{t("bachelor")}</Typography>
-                    </StyledEducationButton>
+                    </StyledEducationDiv>
                   </Grid>
                 </Grid>
                 </Box>
@@ -161,7 +157,7 @@ function About( { t  } ){
                     gitHubLogo,
                     gitLogo
                   ].map((logo, i) => (
-                    <StyledIconButton
+                    <StyledSkillsIcons
                       key={i}
                       sx={{
                         flex: { xs: "0 1 22%", md: "0 1 auto" },
@@ -170,14 +166,12 @@ function About( { t  } ){
                       }}
                     >
                       <img src={logo} width="40px" />
-                    </StyledIconButton>
+                    </StyledSkillsIcons>
                   ))}
                   </Box>
                 </Box>
               </Container>
-          </StyledAbout>
+          </StyledBackgroundAbout>
         </>
       )
 }
-
-export default About

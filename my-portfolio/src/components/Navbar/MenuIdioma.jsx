@@ -3,7 +3,7 @@ import Brasil from "../../assets/images/Brasil.png";
 import Usa from "../../assets/images/Usa.png";
 import { styled } from "@mui/material/styles";
 
-export const StyledHandleMenu = styled(Box)(({ theme }) => ({
+const StyledHandleLanguageMenu = styled(Box)(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
     position: "absolute",
@@ -19,25 +19,25 @@ export const StyledHandleMenu = styled(Box)(({ theme }) => ({
     pointerEvents: "none",
 }));
 
-export const StyledBox = styled(Box)(() => {
-    display:"flex"
-    justifyContent:"flex-start"
-    flexDirection:"column"
-    height:"100%"
-    marginTop:"10px"
+const StyledBackgroundMenu = styled(Box)(() => ({
+    display:"flex",
+    justifyContent:"flex-start",
+    flexDirection:"column",
+    height:"100%",
+    marginTop:"10px",
     alignItems:"center"
-})
+}))
 
-export function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage, t }) {
+export default function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage, t }) {
   return (
-    <StyledHandleMenu
+    <StyledHandleLanguageMenu
       sx={{
         opacity: menuIdiomaAberto ? 1 : 0,
         transform: menuIdiomaAberto ? 'translateY(0)' : 'translateY(-10px)',
         pointerEvents: menuIdiomaAberto ? 'auto' : 'none',
       }}
     >
-      <StyledBox>
+      <StyledBackgroundMenu>
         <Typography variant="h6" borderBottom="2px solid black" textAlign="center" width="100%">{t("language")}</Typography>
         <Box display="flex" justifyContent="center" marginTop="5px">
           <IconButton onClick={() => changeLanguage('pt')}>
@@ -47,7 +47,7 @@ export function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage, t }) {
             <StyledImg src={Usa} alt="Usa" />
           </IconButton>
         </Box>
-      </StyledBox>
-    </StyledHandleMenu>
+      </StyledBackgroundMenu>
+    </StyledHandleLanguageMenu>
   );
 }

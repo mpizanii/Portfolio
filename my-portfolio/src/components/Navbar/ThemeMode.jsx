@@ -2,7 +2,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { Box, styled } from '@mui/material';
 
-export const StyledBox = styled(Box)(( { theme } ) => ({
+const StyledBackgroundBox = styled(Box)(( { theme } ) => ({
     [theme.breakpoints.up("xs")]: {
       display: "flex",
       backgroundColor: "#bab7b7",
@@ -17,7 +17,7 @@ export const StyledBox = styled(Box)(( { theme } ) => ({
     },
   }));
 
- export const StyledButtonBall = styled(Box)(({ mode, theme }) => ({
+const StyledButtonIcon = styled(Box)(({ mode, theme }) => ({
     [theme.breakpoints.up("xs")]: {
       width: "30px",
       height: "30px",
@@ -37,18 +37,16 @@ export const StyledBox = styled(Box)(( { theme } ) => ({
     },
   }));
 
-function ThemeMode({ theme, setTheme }) {
+export default function ThemeMode({ theme, setTheme }) {
   const themeToggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <StyledBox onClick={themeToggle}>
-        <StyledButtonBall mode={theme}>
+    <StyledBackgroundBox onClick={themeToggle}>
+        <StyledButtonIcon mode={theme}>
           {theme === "light" ? <LightModeIcon /> : <DarkModeIcon />}
-        </StyledButtonBall>
-    </StyledBox>
+        </StyledButtonIcon>
+    </StyledBackgroundBox>
   );
 }
-
-export default ThemeMode;

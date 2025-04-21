@@ -11,14 +11,15 @@ const StyledHandleMenu = styled(Box)(({ theme }) => ({
   height: "100%",
 }));
 
-const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+export default function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg, changeLanguage, t}) {
 
-export function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg, changeLanguage, t}) {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <Drawer anchor="left" open={menuLateralAberto} onClose={() => setMenuLateralAberto(false)}>

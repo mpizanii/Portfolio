@@ -6,7 +6,7 @@ import { Typewriter } from '../../components/TypewriterEffect/TypewriterEffect';
 import "../../i18n";
 import { useTranslation } from "react-i18next";
 
-const StyledHero = styled("div")(({theme}) => ({
+const StyledBackgroundHero = styled("div")(({theme}) => ({
   backgroundColor: theme.palette.background.default, 
   display: "flex",
   height: "100vh",
@@ -19,13 +19,13 @@ const StyledHero = styled("div")(({theme}) => ({
   }
 }))
 
-const StyledImg = styled("img")(({theme}) => ({
+const StyledMeImg = styled("img")(({theme}) => ({
   width: "100%",
   borderRadius:"50%",
   border: `2px solid ${theme.palette.border.main}`
 }))
 
-const StyledButton = styled("a")(({theme}) => ({
+const StyledHeroButton = styled("a")(({theme}) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -44,43 +44,41 @@ const StyledButton = styled("a")(({theme}) => ({
   "&:hover": {
   backgroundColor: theme.palette.buttonHover.main,}
 }))
-function Hero( { t } ) {
-  const { i18n } = useTranslation();
 
+export default function Hero( { t } ) {
+  const { i18n } = useTranslation();
   const lang = i18n.language;
   const pdfPath = lang === 'en' ? "pdf/CV - en.pdf" : "pdf/CV - pt.pdf"
 
   return (
     <>
-      <StyledHero>
+      <StyledBackgroundHero>
         <Container>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12, md: 4 }}>
-                <StyledImg src={Me}/>
+                <StyledMeImg src={Me}/>
             </Grid>
             <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h1" color="text.main" textAlign="center">Matheus Pizani</Typography>
               <Typography variant="h4" color="text.main" textAlign="center"><Typewriter text={t('career')}/></Typography>
               <Grid container display="flex" justifyContent="center" gap="10px">
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
-                <StyledButton component="a" href={pdfPath} download>
+                <StyledHeroButton component="a" href={pdfPath} download>
                   <DownloadIcon />
                   {t('download')}
-                </StyledButton>
+                </StyledHeroButton>
                 </Grid>
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
-                  <StyledButton component="a" href="mailto:mpizani28@gmail.com?">
+                  <StyledHeroButton component="a" href="mailto:mpizani28@gmail.com?">
                     <EmailIcon/>
                     {t('contact')}
-                  </StyledButton>
+                  </StyledHeroButton>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Container>
-      </StyledHero>
+      </StyledBackgroundHero>
     </>
   )
 }
-  
-export default Hero
