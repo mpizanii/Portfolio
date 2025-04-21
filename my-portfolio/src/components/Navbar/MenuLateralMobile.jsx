@@ -11,6 +11,13 @@ const StyledHandleMenu = styled(Box)(({ theme }) => ({
   height: "100%",
 }));
 
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg, changeLanguage, t}) {
   return (
     <>
@@ -18,9 +25,9 @@ export function MenuLateral({ menuLateralAberto, setMenuLateralAberto, StyledImg
         <StyledHandleMenu>
         <Typography variant= "h6" borderBottom="2px solid black" textAlign="center" width="100%">Matheus Pizani</Typography>
             <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column" marginTop="5px">
-                <MenuItem onClick={() => console.log("sobre")}>{t("information.about")}</MenuItem>
-                <MenuItem onClick={() => console.log("habilidades")}>{t("information.skills")}</MenuItem>
-                <MenuItem onClick={() => console.log("projetos")}>{t("information.projects")}</MenuItem>
+                <MenuItem onClick={() => scrollToSection("about")}>{t("information.about")}</MenuItem>
+                <MenuItem onClick={() => scrollToSection("about")}>{t("information.skills")}</MenuItem>
+                <MenuItem onClick={() => scrollToSection("projects")}>{t("information.projects")}</MenuItem>
             </Box>       
         <Box display="flex" justifyContent="flex-start" flexDirection="column" height="100%" marginTop="10px" alignItems="center">
             <Typography variant= "h6" borderBottom="2px solid black" textAlign="center" width="100%">{t("language")}</Typography>

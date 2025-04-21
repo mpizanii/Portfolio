@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import "./i18n.js";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const {t, i18n} = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -25,7 +25,7 @@ function App() {
           <Navbar theme={theme} setTheme={setTheme} changeLanguage={changeLanguage} t={t}/>
           <Hero t={t}/>
           <About t={t}/>
-          <Projects/>
+          <Projects t={t}/>
           <Footer/>
       </ThemeProvider>
       </>

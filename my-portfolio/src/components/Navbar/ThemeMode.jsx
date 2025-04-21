@@ -28,7 +28,7 @@ export const StyledBox = styled(Box)(( { theme } ) => ({
       alignItems: "center",
       justifyContent: "center",
       position: "relative",
-      left: mode === "dark" ? "0" : "40px",
+      left: mode === "light" ? "0" : "40px",
       transition: "left 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out"
     },
     [theme.breakpoints.up("md")]: {

@@ -51,4 +51,3 @@ export function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage, t }) {
     </StyledHandleMenu>
   );
 }
-
