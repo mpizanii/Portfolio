@@ -9,5 +9,6 @@
     "school": "School",
     "bachelor": "Bachelor's Degree",
     "computerScience": "Computer Science",
-    "aboutme": "Hello, world! My name is Matheus Pizani. I'm a 5th-semester Computer Science student with a strong passion for web development. I enjoy working on both front-end and back-end — yep, I'm fullstack! I love challenges and I'm always looking to learn something new, whether it's a technology, a tool, or a different way to solve problems. I truly believe technology can turn ideas into amazing experiences — and that's exactly what keeps me motivated to keep coding every single day."
+    "aboutme": "Hello, world! My name is Matheus Pizani. I'm a 5th-semester Computer Science student with a strong passion for web development. I enjoy working on both front-end and back-end — yep, I'm fullstack! I love challenges and I'm always looking to learn something new, whether it's a technology, a tool, or a different way to solve problems. I truly believe technology can turn ideas into amazing experiences — and that's exactly what keeps me motivated to keep coding every single day.",
+    "recipeManagerDescription": "Recipe Manager is a web application designed to help you better organize your kitchen, manage your pantry, and create amazing recipes using the ingredients you have on hand — all with the help of cutting-edge technology and artificial intelligence (Gemini API) to generate creative dishes!"
 }
