@@ -87,7 +87,7 @@ const StyledProjectImage = styled("img")(({ theme }) => ({
     width: "100%",
     height: "100%",
     borderRadius: "10px",
-    backgroundColor:  "white",
+    backgroundColor: theme.palette.button.main,
     color: theme.palette.textBackgroundContrast.main,
     cursor: "auto",
     border: "none",
@@ -95,7 +95,7 @@ const StyledProjectImage = styled("img")(({ theme }) => ({
 
 }))
 
-function Projects( { t } ){
+export default function Projects( { t } ){
   const el = useRef();
   const tl = useRef();
 
@@ -157,5 +157,3 @@ function Projects( { t } ){
         </>
       )
 }
-
-export default Projects
