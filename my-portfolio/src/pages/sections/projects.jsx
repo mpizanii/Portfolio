@@ -3,11 +3,10 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RecipeManager from "../../assets/images/RecipeManager.jpeg";
-import DjangoLogo from "../../assets/images/DjangoLogo.png";
-import HtmlLogo from "../../assets/images/HtmlLogo.png";
-import CssLogo from "../../assets/images/CssLogo.png";
-import JavaScriptLogo from "../../assets/images/JavaScriptLogo.png";
-import GitHubLogo from "../../assets/images/GitHubLogo.png";
+import DjangoLogo from "../../assets/images/djangoLogo.png";
+import HtmlLogo from "../../assets/images/htmlLogo.png";
+import CssLogo from "../../assets/images/cssLogo.png";
+import JavaScriptLogo from "../../assets/images/javaScriptLogo.png";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
