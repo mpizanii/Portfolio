@@ -1,44 +1,37 @@
 import { styled } from "@mui/material"
 import { Box, Typography, IconButton } from "@mui/material"
-import LinkedinLogo from "../../assets/images/LinkedinLogo.png"
-import GitHubLogo from "../../assets/images/GitHubLogo.png"
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 
 const StyledBackgroundFooter = styled("div")(({theme}) => ({
     backgroundColor: theme.palette.secondBackground.main, 
-    height: "10vh",
+    height: "12vh",
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center"
 }))
 
-const StyledSocialMediaIcons = styled(IconButton)(({theme}) => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "40px",
-  height: "40px",
-  borderRadius: "10px",
-  backgroundColor: theme.palette.button.main,
-  cursor: "pointer",
-  border: "none",
-}))
-
-
-export default function Footer(){
+export default function Footer( { t } ){
     return (
         <>
           <StyledBackgroundFooter>
-            <Box width="100%" display="flex" alignItems="center" px="2" py="2">
-              <Box flex="1"></Box>
-              <Box flex="1" textAlign="center" marginLeft={3}>
-                <Typography variant="body1">
-                  © Matheus Pizani - {new Date().getFullYear()}. <br />
-                  Todos os direitos reservados.
-                </Typography>
-              </Box>
-              <Box display="flex" gap="10px" justifyContent="flex-end" flex="1" marginRight="20px">
-                <a href=""><StyledSocialMediaIcons><img src={LinkedinLogo} width="30px"/></StyledSocialMediaIcons></a>
-                <a href=""><StyledSocialMediaIcons><img src={GitHubLogo} width="40px"/></StyledSocialMediaIcons></a>
-              </Box>
+            <Box width="100%" display="flex" alignItems="center" gap="100px" justifyContent="center" color="black">
+                <IconButton href="https://www.linkedin.com/in/pizanimatheus/">
+                  <LinkedInIcon/>
+                </IconButton>
+                <IconButton href="https://github.com/mpizanii">
+                  <GitHubIcon/>
+                </IconButton>
+                <IconButton href="mailto:mpizani28@gmail.com?">
+                  <EmailIcon/>
+                </IconButton>
+            </Box>
+            <Box width="100%" display="flex" alignItems="center" justifyContent="center" textAlign="center" marginTop="5px">
+              <Typography variant="body1">
+                © {new Date().getFullYear()} Matheus Pizani - {t("footerDescription")}
+              </Typography>
             </Box>
           </StyledBackgroundFooter>
         </>

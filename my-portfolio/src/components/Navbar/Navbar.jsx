@@ -1,5 +1,6 @@
 import { styled, AppBar, MenuItem, Toolbar, IconButton, Box } from "@mui/material"
 import Brasil from "../../assets/images/Brasil.png"
+import Usa from "../../assets/images/Usa.png"
 import ThemeMode from "./ThemeMode";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
@@ -48,7 +49,7 @@ const StyledRotatingLanguageIcon = styled(KeyboardArrowUpIcon, {
   transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
 }));
 
-export default function Navbar( {theme, setTheme, changeLanguage, t} ) {
+export default function Navbar( {theme, setTheme, changeLanguage, t, currentLanguage} ) {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
   const [menuIdiomaAberto, setMenuIdiomaAberto] = useState(false);
   
@@ -79,7 +80,7 @@ export default function Navbar( {theme, setTheme, changeLanguage, t} ) {
         </StyledMobileToolbar>
         <StyledDesktopToolbar>
           <Box display= "flex" alignItems="center">
-            <StyledNavbarIcons src={Brasil}/>
+            <StyledNavbarIcons src={currentLanguage === "pt" ? Brasil : Usa} />
             <IconButton onClick={handleMenuIdiomaClick}>
               <StyledRotatingLanguageIcon open={menuIdiomaAberto} />
             </IconButton>

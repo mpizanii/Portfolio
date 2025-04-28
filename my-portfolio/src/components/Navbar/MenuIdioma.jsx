@@ -28,7 +28,7 @@ const StyledBackgroundMenu = styled(Box)(() => ({
     alignItems:"center"
 }))
 
-export default function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage, t }) {
+export default function MenuIdioma({ menuIdiomaAberto, setMenuIdiomaAberto, StyledImg, changeLanguage, t }) {
   return (
     <StyledHandleLanguageMenu
       sx={{
@@ -40,10 +40,16 @@ export default function MenuIdioma({ menuIdiomaAberto, StyledImg, changeLanguage
       <StyledBackgroundMenu>
         <Typography variant="h6" borderBottom="2px solid black" textAlign="center" width="100%">{t("language")}</Typography>
         <Box display="flex" justifyContent="center" marginTop="5px">
-          <IconButton onClick={() => changeLanguage('pt')}>
+          <IconButton onClick={() => {
+            changeLanguage('pt');
+            setMenuIdiomaAberto(false);  
+          }}>
             <StyledImg src={Brasil} alt="Brasil" />
           </IconButton>
-          <IconButton onClick={() => changeLanguage('en')}>
+          <IconButton onClick={() => {
+            changeLanguage('en');
+            setMenuIdiomaAberto(false);  
+          }}>
             <StyledImg src={Usa} alt="Usa" />
           </IconButton>
         </Box>

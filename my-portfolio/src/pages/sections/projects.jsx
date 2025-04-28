@@ -8,6 +8,8 @@ import HtmlLogo from "../../assets/images/HtmlLogo.png";
 import CssLogo from "../../assets/images/CssLogo.png";
 import JavaScriptLogo from "../../assets/images/JavaScriptLogo.png";
 import GitHubLogo from "../../assets/images/GitHubLogo.png";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const StyledBackgroundProjects = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
@@ -63,7 +65,9 @@ const StyledProjectsButton = styled("a")(({ theme }) => ({
     alignItems: "center", 
     width: "100px",
     height: "40px",
+    gap: "5px",
     borderRadius: "10px",
+    textAlign:"center",
     backgroundColor:  "white",
     color: theme.palette.text.main,
     cursor: "pointer",
@@ -146,7 +150,8 @@ export default function Projects( { t } ){
                         <Typography variant="body1" padding="10px" textAlign="center">{t("recipeManagerDescription")}</Typography>
                       </Box>
                       <Box display="flex" justifyContent="center" alignItems="center" margin="auto 0px 60px 0px" gap="50px">
-                        <StyledProjectsButton href="https://github.com/mpizanii/Recipe-Manager"><img src={GitHubLogo} width="30px"/>Ver no Github</StyledProjectsButton>
+                        <StyledProjectsButton href="https://web-production-813e0.up.railway.app/"><VisibilityIcon/>{t("seeDeployProjects")}</StyledProjectsButton>
+                        <StyledProjectsButton href="https://github.com/mpizanii/Recipe-Manager"><GitHubIcon/>{t("seeGitHubProjects")}</StyledProjectsButton>
                       </Box>
                     </StyledProjects>
                   </Grid>
