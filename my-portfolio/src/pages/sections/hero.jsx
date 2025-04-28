@@ -32,6 +32,7 @@ const StyledHeroButton = styled("a")(({theme}) => ({
   width: "150px",
   height: "40px",
   gap: "8px",
+  textAlign: "center",
   marginTop: "15px",
   borderRadius: "10px",
   backgroundColor:  theme.palette.button.main,
@@ -63,13 +64,13 @@ export default function Hero( { t } ) {
               <Typography variant="h4" color="text.main" textAlign="center"><Typewriter text={t('career')}/></Typography>
               <Grid container display="flex" justifyContent="center" gap="10px">
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
-                <StyledHeroButton component="a" href={pdfPath} download>
+                <StyledHeroButton href={pdfPath} download>
                   <DownloadIcon />
                   {t('download')}
                 </StyledHeroButton>
                 </Grid>
                 <Grid size={{ xs:4, md:3 }} display="flex" justifyContent="center">
-                  <StyledHeroButton component="a" href="mailto:mpizani28@gmail.com?">
+                  <StyledHeroButton href="mailto:mpizani28@gmail.com?">
                     <EmailIcon/>
                     {t('contact')}
                   </StyledHeroButton>
