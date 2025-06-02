@@ -3,10 +3,14 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RecipeManager from "../../assets/images/RecipeManager.jpeg";
+import cadastroUsuarios from "../../assets/images/cadastroUsuarios.png";
 import DjangoLogo from "../../assets/images/djangoLogo.png";
 import HtmlLogo from "../../assets/images/htmlLogo.png";
 import CssLogo from "../../assets/images/cssLogo.png";
 import JavaScriptLogo from "../../assets/images/javaScriptLogo.png";
+import supabaseLogo from "../../assets/images/supabaseLogo.png";
+import reactLogo from "../../assets/images/reactLogo.png";
+import postgreLogo from "../../assets/images/postgreLogo.png";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
@@ -112,7 +116,7 @@ export default function Projects( { t } ){
             start: "top 800px",
             end: "bottom 700px"
           }
-        }).fromTo("#recipeManager", {
+        }).fromTo("#layoutEffectProjects",  {
           opacity: 0,
           y: 60,
         }, {
@@ -134,7 +138,7 @@ export default function Projects( { t } ){
               <Box display="flex" justifyContent="center" flexDirection="column" gap="20px" marginTop="20px" ref={el}>
                 <Grid container spacing={2} display="flex" justifyContent="center">
                   <Grid size={{ xs:12, md:6 }} display="flex" justifyContent="center" >
-                    <StyledProjects id="recipeManager">
+                    <StyledProjects id="layoutEffectProjects">
                       <Box backgroundColor="white" height="40%" width="100%" sx={{ borderTopLeftRadius:20, borderTopRightRadius:20 }}>
                       <StyledProjectImage src={RecipeManager}/>
                       </Box>
@@ -151,6 +155,27 @@ export default function Projects( { t } ){
                       <Box display="flex" justifyContent="center" alignItems="center" margin="auto 0px 60px 0px" gap="50px">
                         <StyledProjectsButton href="https://web-production-813e0.up.railway.app/"><VisibilityIcon/>{t("seeDeployProjects")}</StyledProjectsButton>
                         <StyledProjectsButton href="https://github.com/mpizanii/Recipe-Manager"><GitHubIcon/>{t("seeGitHubProjects")}</StyledProjectsButton>
+                      </Box>
+                    </StyledProjects>
+                  </Grid>
+
+                  <Grid size={{ xs:12, md:6 }} display="flex" justifyContent="center" >
+                    <StyledProjects id="layoutEffectProjects">
+                      <Box backgroundColor="white" height="40%" width="100%" sx={{ borderTopLeftRadius:20, borderTopRightRadius:20 }}>
+                      <StyledProjectImage src={cadastroUsuarios}/>
+                      </Box>
+                      <Box display="flex" padding="10px" gap="8px" justifyContent="space-evenly" >
+                        <StyledProjectsIcons><img src={reactLogo} width="50px"/></StyledProjectsIcons>
+                        <StyledProjectsIcons><img src={supabaseLogo} width="50px"/></StyledProjectsIcons>
+                        <StyledProjectsIcons><img src={postgreLogo} width="50px"/></StyledProjectsIcons>
+                      </Box>
+                      <Box display="flex" justifyContent="center" flexDirection="column" textAlign="center">
+                        <Typography variant="h6">{t("inventoryAndCustomerManagement")}</Typography>
+                        <Typography variant="body1" padding="10px" textAlign="center">{t("inventoryAndCustomerManagementDescription")}</Typography>
+                      </Box>
+                      <Box display="flex" justifyContent="center" alignItems="center" margin="auto 0px 60px 0px" gap="50px">
+                        <StyledProjectsButton><VisibilityIcon/>{t("inProgress")}</StyledProjectsButton>
+                        <StyledProjectsButton href="https://github.com/mpizanii/CadastroUsuarios"><GitHubIcon/>{t("seeGitHubProjects")}</StyledProjectsButton>
                       </Box>
                     </StyledProjects>
                   </Grid>

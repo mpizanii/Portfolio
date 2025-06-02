@@ -13,5 +13,8 @@
     "recipeManagerDescription": "O Recipe Manager é uma aplicação web projetada para organizar melhor a cozinha, gerenciar a despensa e criar receitas incríveis com os alimentos disponíveis. Tudo isso com a ajuda de tecnologia de ponta e inteligência artificial (APi do Gemini) para criar receitas criativas!",
     "seeDeployProjects": "Ver site",
     "seeGitHubProjects": "Ver GitHub",
-    "footerDescription": "Todos os direitos reservados"
+    "footerDescription": "Todos os direitos reservados",
+    "inventoryAndCustomerManagement": "Controle de estoque e clientes - Em andamento",
+    "inventoryAndCustomerManagementDescription": "Sistema web para gerenciar o estoque e os clientes de uma empresa, facilitando o controle de produtos, vendas e cadastros de forma eficiente e organizada.",
+    "inProgress": "Em andamento"
 }

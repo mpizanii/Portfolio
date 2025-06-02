@@ -12,6 +12,7 @@ import muiLogo from "../../assets/images/muiLogo.png"
 import mySqlLogo from "../../assets/images/mySqlLogo.png"
 import postgreLogo from "../../assets/images/postgreLogo.png"
 import reactLogo from "../../assets/images/reactLogo.png"
+import supabaseLogo from "../../assets/images/supabaseLogo.png"
 import { useLayoutEffect  } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -155,7 +156,8 @@ export default function About( { t  } ){
                     mySqlLogo,
                     postgreLogo,
                     gitHubLogo,
-                    gitLogo
+                    gitLogo,
+                    supabaseLogo
                   ].map((logo, i) => (
                     <StyledSkillsIcons
                       key={i}

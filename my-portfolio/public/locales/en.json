@@ -13,5 +13,8 @@
     "recipeManagerDescription": "Recipe Manager is a web application designed to help you better organize your kitchen, manage your pantry, and create amazing recipes using the ingredients you have on hand — all with the help of cutting-edge technology and artificial intelligence (Gemini API) to generate creative dishes!",
     "seeDeployProjects": "See deploy",
     "seeGitHubProjects": "See GitHub",
-    "footerDescription": "All rights reserved"
+    "footerDescription": "All rights reserved",
+    "inventoryAndCustomerManagement": "Inventory and Customer Management - In progress",
+    "inventoryAndCustomerManagementDescription": "Web system to manage a company's inventory and customers, making it easier to control products, sales, and customer information efficiently and in an organized way.",
+    "inProgress": "In progress"
 }
