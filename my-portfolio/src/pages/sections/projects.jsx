@@ -8,11 +8,12 @@ import DjangoLogo from "../../assets/images/djangoLogo.png";
 import HtmlLogo from "../../assets/images/htmlLogo.png";
 import CssLogo from "../../assets/images/cssLogo.png";
 import JavaScriptLogo from "../../assets/images/javaScriptLogo.png";
-import supabaseLogo from "../../assets/images/supabaseLogo.png";
 import reactLogo from "../../assets/images/reactLogo.png";
 import postgreLogo from "../../assets/images/postgreLogo.png";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import cLogo from "../../assets/images/cLogo.png"
+import netLogo from "../../assets/images/netLogo.png"
 
 const StyledBackgroundProjects = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
@@ -166,7 +167,8 @@ export default function Projects( { t } ){
                       </Box>
                       <Box display="flex" padding="10px" gap="8px" justifyContent="space-evenly" >
                         <StyledProjectsIcons><img src={reactLogo} width="50px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={supabaseLogo} width="50px"/></StyledProjectsIcons>
+                        <StyledProjectsIcons><img src={cLogo} width="50px"/></StyledProjectsIcons>
+                        <StyledProjectsIcons><img src={netLogo} width="50px"/></StyledProjectsIcons>
                         <StyledProjectsIcons><img src={postgreLogo} width="50px"/></StyledProjectsIcons>
                       </Box>
                       <Box display="flex" justifyContent="center" flexDirection="column" textAlign="center">

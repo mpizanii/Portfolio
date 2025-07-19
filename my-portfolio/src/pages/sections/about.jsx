@@ -2,17 +2,19 @@ import { styled, Typography, Grid, Box, Container, IconButton, useTheme } from "
 import SchoolIcon from '@mui/icons-material/School';
 import pythonLogo from "../../assets/images/pythonLogo.png"
 import djangoLogo from "../../assets/images/djangoLogo.png"
-import flaskLogo from "../../assets/images/flaskLogo.png"
 import cssLogo from "../../assets/images/cssLogo.png"
 import gitHubLogo from "../../assets/images/gitHubLogo.png"
 import gitLogo from "../../assets/images/gitLogo.png"
 import htmlLogo from "../../assets/images/htmlLogo.png"
 import javaScriptLogo from "../../assets/images/javaScriptLogo.png"
-import muiLogo from "../../assets/images/muiLogo.png"
 import mySqlLogo from "../../assets/images/mySqlLogo.png"
 import postgreLogo from "../../assets/images/postgreLogo.png"
 import reactLogo from "../../assets/images/reactLogo.png"
-import supabaseLogo from "../../assets/images/supabaseLogo.png"
+import azureLogo from "../../assets/images/azureLogo.png"
+import azureSqlLogo from "../../assets/images/azureSqlLogo.png"
+import cLogo from "../../assets/images/cLogo.png"
+import netLogo from "../../assets/images/netLogo.png"
+import tailwindLogo from "../../assets/images/tailwindLogo.png"
 import { useLayoutEffect  } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -145,19 +147,21 @@ export default function About( { t  } ){
                   </Box>
                   <Box display="flex" gap="20px" marginTop="10px" justifyContent="center" alignItems="center" flexWrap="wrap">
                   {[
-                    pythonLogo,
-                    djangoLogo,
-                    flaskLogo,
+                    cLogo,
                     javaScriptLogo,
+                    pythonLogo,
                     reactLogo,
-                    htmlLogo,
+                    netLogo,
+                    djangoLogo,
+                    htmlLogo, 
                     cssLogo,
-                    muiLogo,
+                    tailwindLogo,
                     mySqlLogo,
                     postgreLogo,
+                    azureSqlLogo,
                     gitHubLogo,
                     gitLogo,
-                    supabaseLogo
+                    azureLogo
                   ].map((logo, i) => (
                     <StyledSkillsIcons
                       key={i}
