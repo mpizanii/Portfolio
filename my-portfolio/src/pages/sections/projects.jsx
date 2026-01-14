@@ -3,13 +3,16 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RecipeManager from "../../assets/images/RecipeManager.jpeg";
-import cadastroUsuarios from "../../assets/images/cadastroUsuarios.png";
+import estoqueKLG from "../../assets/images/estoqueKLG.png";
+import encurtadorURL from "../../assets/images/encurtadorURL.png";
+import geovana21Anos from "../../assets/images/geovana21Anos.png";
 import DjangoLogo from "../../assets/images/djangoLogo.png";
 import HtmlLogo from "../../assets/images/htmlLogo.png";
 import CssLogo from "../../assets/images/cssLogo.png";
 import JavaScriptLogo from "../../assets/images/javaScriptLogo.png";
 import reactLogo from "../../assets/images/reactLogo.png";
 import postgreLogo from "../../assets/images/postgreLogo.png";
+import mongoDBLogo from "../../assets/images/mongoDBLogo.png";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import cLogo from "../../assets/images/cLogo.png"
@@ -129,62 +132,84 @@ export default function Projects( { t } ){
       return () => ctx.revert();
   }, [])
 
-    return (
-        <>
-          <StyledBackgroundProjects id="projects">
-            <Container maxWidth="lg">
-              <Box height="20%" width="100%" display="flex" justifyContent="center">
-                <Typography variant="h3" color="text.main" textAlign="center">{t("information.projects")}</Typography>
-              </Box>
-              <Box display="flex" justifyContent="center" flexDirection="column" gap="20px" marginTop="20px" ref={el}>
-                <Grid container spacing={2} display="flex" justifyContent="center">
-                  <Grid size={{ xs:12, md:6 }} display="flex" justifyContent="center" >
-                    <StyledProjects id="layoutEffectProjects">
-                      <Box backgroundColor="white" height="40%" width="100%" sx={{ borderTopLeftRadius:20, borderTopRightRadius:20 }}>
-                      <StyledProjectImage src={RecipeManager}/>
-                      </Box>
-                      <Box display="flex" padding="10px" gap="8px" justifyContent="space-evenly" >
-                        <StyledProjectsIcons><img src={DjangoLogo} width="50px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={CssLogo} width="50px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={HtmlLogo} width="40px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={JavaScriptLogo} width="50px"/></StyledProjectsIcons>
-                      </Box>
-                      <Box display="flex" justifyContent="center" flexDirection="column" textAlign="center">
-                        <Typography variant="h6">Recipe Manager</Typography>
-                        <Typography variant="body1" padding="10px" textAlign="center">{t("recipeManagerDescription")}</Typography>
-                      </Box>
-                      <Box display="flex" justifyContent="center" alignItems="center" margin="auto 0px 60px 0px" gap="50px">
-                        <StyledProjectsButton href="https://web-production-813e0.up.railway.app/"><VisibilityIcon/>{t("seeDeployProjects")}</StyledProjectsButton>
-                        <StyledProjectsButton href="https://github.com/mpizanii/Recipe-Manager"><GitHubIcon/>{t("seeGitHubProjects")}</StyledProjectsButton>
-                      </Box>
-                    </StyledProjects>
-                  </Grid>
+  const projects = [
+    {
+      title: "Recipe Manager",
+      description: t("recipeManagerDescription"),
+      image: RecipeManager,
+      technologies: [DjangoLogo, CssLogo, HtmlLogo, JavaScriptLogo],
+      deployLink: "https://web-production-813e0.up.railway.app/",
+      githubLink: "https://github.com/mpizanii/Recipe-Manager"
+    },
+    {
+      title: t("inventoryAndCustomerManagement"),
+      description: t("inventoryAndCustomerManagementDescription"),
+      image: estoqueKLG,
+      technologies: [reactLogo, cLogo, netLogo, postgreLogo],
+      deployLink: null,
+      githubLink: "https://github.com/mpizanii/CadastroUsuarios"
+    },
+    {
+      title: t("URLShortener"),
+      description: t("URLShortenerDescription"),
+      image: encurtadorURL,
+      technologies: [cLogo, netLogo, mongoDBLogo, reactLogo],
+      deployLink: null,
+      githubLink: "https://github.com/mpizanii/EncurtadorUrl"
+    },
+    {
+      title: t("GuestManager"),
+      description: t("guestManagerDescription"),
+      image: geovana21Anos,
+      technologies: [reactLogo, postgreLogo],
+      deployLink: "https://geovana-21-anos.vercel.app/",
+      githubLink: "https://github.com/mpizanii/Geovana-21-anos"
+    },
+    // {
+    //   title: "FinTracker",
+    //   description: t("finTrackerDescription"),
+    //   image: null,
+    //   technologies: [],
+    //   deployLink: null,
+    //   githubLink: null
+    // },
+  ]
 
-                  <Grid size={{ xs:12, md:6 }} display="flex" justifyContent="center" >
-                    <StyledProjects id="layoutEffectProjects">
-                      <Box backgroundColor="white" height="40%" width="100%" sx={{ borderTopLeftRadius:20, borderTopRightRadius:20 }}>
-                      <StyledProjectImage src={cadastroUsuarios}/>
-                      </Box>
-                      <Box display="flex" padding="10px" gap="8px" justifyContent="space-evenly" >
-                        <StyledProjectsIcons><img src={reactLogo} width="50px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={cLogo} width="50px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={netLogo} width="50px"/></StyledProjectsIcons>
-                        <StyledProjectsIcons><img src={postgreLogo} width="50px"/></StyledProjectsIcons>
-                      </Box>
-                      <Box display="flex" justifyContent="center" flexDirection="column" textAlign="center">
-                        <Typography variant="h6">{t("inventoryAndCustomerManagement")}</Typography>
-                        <Typography variant="body1" padding="10px" textAlign="center">{t("inventoryAndCustomerManagementDescription")}</Typography>
-                      </Box>
-                      <Box display="flex" justifyContent="center" alignItems="center" margin="auto 0px 60px 0px" gap="50px">
-                        <StyledProjectsButton><VisibilityIcon/>{t("inProgress")}</StyledProjectsButton>
-                        <StyledProjectsButton href="https://github.com/mpizanii/CadastroUsuarios"><GitHubIcon/>{t("seeGitHubProjects")}</StyledProjectsButton>
-                      </Box>
-                    </StyledProjects>
-                  </Grid>
+  return (
+    <>
+      <StyledBackgroundProjects id="projects">
+        <Container maxWidth="lg">
+          <Box height="20%" width="100%" display="flex" justifyContent="center">
+            <Typography variant="h3" color="text.main" textAlign="center">{t("information.projects")}</Typography>
+          </Box>
+          <Box display="flex" justifyContent="center" flexDirection="column" gap="20px" marginTop="20px" ref={el}>
+            <Grid container spacing={2} display="flex" justifyContent="center">
+              {projects.map((project, index) => (
+                <Grid size={{ xs:12, md:4 }} display="flex" justifyContent="center" key={index} >
+                  <StyledProjects id="layoutEffectProjects">
+                    <Box backgroundColor="white" height="40%" width="100%" sx={{ borderTopLeftRadius:20, borderTopRightRadius:20 }}>
+                    <StyledProjectImage src={project.image}/>
+                    </Box>
+                    <Box display="flex" padding="10px" gap="8px" justifyContent="space-evenly" >
+                      {project.technologies.map((tech, techIndex) => (
+                        <StyledProjectsIcons key={techIndex}><img src={tech} width="40px"/></StyledProjectsIcons>
+                      ))}
+                    </Box>
+                    <Box display="flex" justifyContent="center" flexDirection="column" textAlign="center">
+                      <Typography variant="h6">{project.title}</Typography>
+                      <Typography variant="body1" padding="10px" textAlign="center">{project.description}</Typography>
+                    </Box>
+                    <Box display="flex" justifyContent="center" alignItems="center" margin="auto 0px 60px 0px" gap="50px">
+                      <StyledProjectsButton href={project.deployLink}><VisibilityIcon/>{t("seeDeployProjects")}</StyledProjectsButton>
+                      <StyledProjectsButton href={project.githubLink}><GitHubIcon/>{t("seeGitHubProjects")}</StyledProjectsButton>
+                    </Box>
+                  </StyledProjects>
                 </Grid>
-              </Box>
-            </Container>
-          </StyledBackgroundProjects>
-        </>
-      )
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+      </StyledBackgroundProjects>
+    </>
+  )
 }

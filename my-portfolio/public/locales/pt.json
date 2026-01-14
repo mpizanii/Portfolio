@@ -14,7 +14,11 @@
     "seeDeployProjects": "Ver site",
     "seeGitHubProjects": "Ver GitHub",
     "footerDescription": "Todos os direitos reservados",
-    "inventoryAndCustomerManagement": "Controle de estoque e clientes - Em andamento",
-    "inventoryAndCustomerManagementDescription": "Sistema web para gerenciar o estoque e os clientes de uma empresa, facilitando o controle de produtos, vendas e cadastros de forma eficiente e organizada.",
-    "inProgress": "Em andamento"
+    "inventoryAndCustomerManagement": "Controle de Estoque KLG - Em desenvolvimento",
+    "inventoryAndCustomerManagementDescription": "Sistema web completo para empresa do ramo alimentício (KLG), facilitando o controle de produtos, vendas e cadastros de forma eficiente e organizada.",
+    "URLShortener": "Encurtador de Urls",
+    "URLShortenerDescription": "Sistema web para encurtar URLs, facilitando o compartilhamento de links longos de forma prática e eficiente.",
+    "GuestManager": "Gerenciador de Convidados",
+    "guestManagerDescription": "Aplicação web para gerenciar convidados de eventos. Os convidados podem confirmar presença pelo site e a aniversariante pode acompanhar a lista por uma página administrativa protegida por senha.",
+    "inProgress": "Em desenvolvimento"
 }

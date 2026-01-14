@@ -14,7 +14,11 @@
     "seeDeployProjects": "See deploy",
     "seeGitHubProjects": "See GitHub",
     "footerDescription": "All rights reserved",
-    "inventoryAndCustomerManagement": "Inventory and Customer Management - In progress",
-    "inventoryAndCustomerManagementDescription": "Web system to manage a company's inventory and customers, making it easier to control products, sales, and customer information efficiently and in an organized way.",
+    "inventoryAndCustomerManagement": "KLG's Inventory Control - In progress",
+    "inventoryAndCustomerManagementDescription": "Web system for a food industry company (KLG), making it easier to control products, sales, and customer information efficiently and in an organized way.",
+    "URLShortener": "URL Shortener",
+    "URLShortenerDescription": "Web system to shorten URLs, making it easier to share long links in a practical and efficient way.",
+    "GuestManager": "Guest Manager",
+    "guestManagerDescription": "Web application to manage event guests. Guests can confirm their attendance through the site, and the birthday person can monitor the list via an admin page protected by a password.",
     "inProgress": "In progress"
 }
